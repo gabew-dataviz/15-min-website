@@ -1,0 +1,29 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="C:\Users\MIT Transit Lab TfL\Dropbox\MIT\MAS.S70\d3plus-workshop-master\d3plus-workshop-master\d3plus.v2.js"></script>
+
+<body>
+
+</body>
+
+<script>
+var data = [
+  {era: 'Pre-Disney', value: 786.598007, name: 'Star Wars Ep. IV: A New Hope'},
+{era: 'Pre-Disney', value: 534.17196, name: 'Star Wars Ep. V: The Empire Strikes Back'},
+{era: 'Pre-Disney', value: 572.705079, name: 'Star Wars Ep. VI: Return of the Jedi'},
+{era: 'Pre-Disney', value: 1027.044677, name: 'Star Wars Ep. I: The Phantom Menace'},
+{era: 'Pre-Disney', value: 656.695615, name: 'Star Wars Ep. II: Attack of the Clones'},
+{era: 'Pre-Disney', value: 848.998877, name: 'Star Wars Ep. III: Revenge of the Sith'},
+{era: 'Pre-Disney', value: 68.695443, name: 'Star Wars: The Clone Wars'},
+{era: 'Disney', value: 2058.662225, name: 'Star Wars Ep. VII: The Force Awakens'},
+{era: 'Disney', value: 1050.988488, name: 'Rogue One: A Star Wars Story'},
+
+];
+
+new d3plus.Treemap()
+    .data(data)
+    .groupBy(["era", "name"])
+    .tooltip(["name", "value"])              // keys to place in tooltip
+    .render();
+</script>
