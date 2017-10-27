@@ -1,24 +1,41 @@
+
 var data = [
-{id: 'starwars', x: 2001, y: 483}, {id: 'disney', x: 2001, y: 610}, {id: 'both', x: 2001, y: 18},
-{id: 'starwars', x: 2002, y: 367}, {id: 'disney', x: 2002, y: 600}, {id: 'both', x: 2002, y: 23},
-{id: 'starwars', x: 2003, y: 218}, {id: 'disney', x: 2003, y: 573}, {id: 'both', x: 2003, y: 6},
-{id: 'starwars', x: 2004, y: 249}, {id: 'disney', x: 2004, y: 720}, {id: 'both', x: 2004, y: 11},
-{id: 'starwars', x: 2005, y: 396}, {id: 'disney', x: 2005, y: 571}, {id: 'both', x: 2005, y: 24},
-{id: 'starwars', x: 2006, y: 235}, {id: 'disney', x: 2006, y: 598}, {id: 'both', x: 2006, y: 16},
-{id: 'starwars', x: 2007, y: 353}, {id: 'disney', x: 2007, y: 672}, {id: 'both', x: 2007, y: 13},
-{id: 'starwars', x: 2008, y: 329}, {id: 'disney', x: 2008, y: 725}, {id: 'both', x: 2008, y: 6},
-{id: 'starwars', x: 2009, y: 265}, {id: 'disney', x: 2009, y: 665}, {id: 'both', x: 2009, y: 11},
-{id: 'starwars', x: 2010, y: 292}, {id: 'disney', x: 2010, y: 582}, {id: 'both', x: 2010, y: 25},
-{id: 'starwars', x: 2011, y: 319}, {id: 'disney', x: 2011, y: 650}, {id: 'both', x: 2011, y: 23},
-{id: 'starwars', x: 2012, y: 312}, {id: 'disney', x: 2012, y: 742}, {id: 'both', x: 2012, y: 47},
-{id: 'starwars', x: 2013, y: 471}, {id: 'disney', x: 2013, y: 957}, {id: 'both', x: 2013, y: 123},
-{id: 'starwars', x: 2014, y: 495}, {id: 'disney', x: 2014, y: 1030}, {id: 'both', x: 2014, y: 116},
-{id: 'starwars', x: 2015, y: 951}, {id: 'disney', x: 2015, y: 1071}, {id: 'both', x: 2015, y: 250},
-{id: 'starwars', x: 2016, y: 902}, {id: 'disney', x: 2016, y: 966}, {id: 'both', x: 2016, y: 213}
+  {id: 'starwars', Year: 2001, Count: 1.00}, {id: 'disney', Year: 2001, Count: 1.00}, {id: 'both', Year: 2001, Count: 1.00},
+  {id: 'starwars', Year: 2002, Count: 0.76}, {id: 'disney', Year: 2002, Count: 0.98}, {id: 'both', Year: 2002, Count: 1.28},
+  {id: 'starwars', Year: 2003, Count: 0.45}, {id: 'disney', Year: 2003, Count: 0.94}, {id: 'both', Year: 2003, Count: 0.33},
+  {id: 'starwars', Year: 2004, Count: 0.52}, {id: 'disney', Year: 2004, Count: 1.18}, {id: 'both', Year: 2004, Count: 0.61},
+  {id: 'starwars', Year: 2005, Count: 0.82}, {id: 'disney', Year: 2005, Count: 0.94}, {id: 'both', Year: 2005, Count: 1.33},
+  {id: 'starwars', Year: 2006, Count: 0.49}, {id: 'disney', Year: 2006, Count: 0.98}, {id: 'both', Year: 2006, Count: 0.89},
+  {id: 'starwars', Year: 2007, Count: 0.73}, {id: 'disney', Year: 2007, Count: 1.10}, {id: 'both', Year: 2007, Count: 0.72},
+  {id: 'starwars', Year: 2008, Count: 0.68}, {id: 'disney', Year: 2008, Count: 1.19}, {id: 'both', Year: 2008, Count: 0.33},
+  {id: 'starwars', Year: 2009, Count: 0.55}, {id: 'disney', Year: 2009, Count: 1.09}, {id: 'both', Year: 2009, Count: 0.61},
+  {id: 'starwars', Year: 2010, Count: 0.60}, {id: 'disney', Year: 2010, Count: 0.95}, {id: 'both', Year: 2010, Count: 1.39},
+  {id: 'starwars', Year: 2011, Count: 0.66}, {id: 'disney', Year: 2011, Count: 1.07}, {id: 'both', Year: 2011, Count: 1.28},
+  {id: 'starwars', Year: 2012, Count: 0.65}, {id: 'disney', Year: 2012, Count: 1.22}, {id: 'both', Year: 2012, Count: 2.61},
+  {id: 'starwars', Year: 2013, Count: 0.98}, {id: 'disney', Year: 2013, Count: 1.57}, {id: 'both', Year: 2013, Count: 6.83},
+  {id: 'starwars', Year: 2014, Count: 1.02}, {id: 'disney', Year: 2014, Count: 1.69}, {id: 'both', Year: 2014, Count: 6.44},
+  {id: 'starwars', Year: 2015, Count: 1.97}, {id: 'disney', Year: 2015, Count: 1.76}, {id: 'both', Year: 2015, Count: 13.89},
+  {id: 'starwars', Year: 2016, Count: 1.87}, {id: 'disney', Year: 2016, Count: 1.58}, {id: 'both', Year: 2016, Count: 11.83},
+
 
 ];
 
 new d3plus.LinePlot()
   .data(data)
   .groupBy("id")
+  .y("Count")
+  .x("Year")
+  .shapeConfig({
+      Line: {strokeWidth: 3}
+  })
+  .xConfig({
+    barConfig: {"stroke-width": 2},
+    title: "Year",
+    labels: [2000, 2005, 2010, 2015]
+  })
+  .yConfig({
+    barConfig: {"stroke-width": 2},
+    title: "Normalized Appearances",
+    ticks: []
+  })
   .render();

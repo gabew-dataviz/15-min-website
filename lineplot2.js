@@ -1,23 +1,38 @@
+
 var data = [
-  {x: 2001, y: 0.03},
-  {x: 2002, y: 0.04},
-  {x: 2003, y: 0.01},
-  {x: 2004, y: 0.02},
-  {x: 2005, y: 0.04},
-  {x: 2006, y: 0.04},
-  {x: 2007, y: 0.02},
-  {x: 2008, y: 0.01},
-  {x: 2009, y: 0.02},
-  {x: 2010, y: 0.05},
-  {x: 2011, y: 0.04},
-  {x: 2012, y: 0.08},
-  {x: 2013, y: 0.15},
-  {x: 2014, y: 0.13},
-  {x: 2015, y: 0.19},
-  {x: 2016, y: 0.18}
+  {Year: 2001, phi: 0.03},
+  {Year: 2002, phi: 0.04},
+  {Year: 2003, phi: 0.01},
+  {Year: 2004, phi: 0.02},
+  {Year: 2005, phi: 0.04},
+  {Year: 2006, phi: 0.04},
+  {Year: 2007, phi: 0.02},
+  {Year: 2008, phi: 0.01},
+  {Year: 2009, phi: 0.02},
+  {Year: 2010, phi: 0.05},
+  {Year: 2011, phi: 0.04},
+  {Year: 2012, phi: 0.08},
+  {Year: 2013, phi: 0.15},
+  {Year: 2014, phi: 0.13},
+  {Year: 2015, phi: 0.19},
+  {Year: 2016, phi: 0.18}
 ];
 
 new d3plus.LinePlot()
   .data(data)
-  .groupBy("id")
+  .y("phi")
+  .x("Year")
+  .shapeConfig({
+      Line: {strokeWidth: 3}
+  })
+  .yConfig({
+    barConfig: {"stroke-width": 2},
+    title: "Phi",
+    ticks:[]
+  })
+  .xConfig({
+    barConfig: {"stroke-width": 2},
+    title: "Year",
+    labels: [2000, 2005, 2010, 2015]
+    })
   .render();
